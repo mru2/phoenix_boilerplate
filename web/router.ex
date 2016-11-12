@@ -7,5 +7,6 @@ defmodule Api.Router do
 
   scope "/api", Api do
     pipe_through :api
+    resources "/posts", PostController, except: [:new, :edit]
   end
 end
