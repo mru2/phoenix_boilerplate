@@ -5,6 +5,4 @@ language: elixir
 elixir:
   - 1.3.3
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    ./travis/build_image.sh;
-    fi
+  - ./travis/build_image.sh;
