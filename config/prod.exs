@@ -13,7 +13,9 @@ use Mix.Config
 # which you typically run after static files are built.
 config :api, Api.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80]
+  url: [host: "example.com", port: 80],
+  server: true,
+  version: Mix.Project.config[:version]
 
 # Do not print debug messages in production
 config :logger, level: :info

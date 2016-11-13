@@ -3,3 +3,26 @@
 # Api
 
 Experiment with deploying and monitoring a phoenix API
+
+# Services
+
+- github
+- travis
+- docker cloud
+
+# Configuration
+
+## Travis
+
+Configure environment variables
+
+```
+DOCKER_EMAIL me@example.com
+DOCKER_USERNAME myusername
+DOCKER_PASSWORD secretsecret
+```
+
+Setup github integration
+
+## Docker cloud
+
