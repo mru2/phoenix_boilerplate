@@ -9,8 +9,8 @@ MIX_ENV=prod mix compile
 MIX_ENV=prod mix release
 
 # Build the image
-docker build -t mru2/phoenix-test .
+docker build -t mru2/phoenix-test:latest .
 
 # Push it
 docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-docker push mru2/phoenix-test
+docker push mru2/phoenix-test:latest
