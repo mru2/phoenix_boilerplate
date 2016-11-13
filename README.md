@@ -17,7 +17,6 @@ Experiment with deploying and monitoring a phoenix API
 Configure environment variables
 
 ```
-DOCKER_EMAIL me@example.com
 DOCKER_USERNAME myusername
 DOCKER_PASSWORD secretsecret
 ```

@@ -12,5 +12,5 @@ MIX_ENV=prod mix release
 docker build -t mru2/phoenix-test .
 
 # Push it
-docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-docker push mru2/phoenix-test:T$RAVIS_BRANCH
+docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+docker push mru2/phoenix-test
