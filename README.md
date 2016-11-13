@@ -26,3 +26,11 @@ Setup github integration
 
 ## Docker cloud
 
+Configure environment variables
+
+```
+POSTGRES_USER
+POSTGRES_PASSWORD
+POSTGRES_HOST
+SECRET_KEY_BASE
+```
