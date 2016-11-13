@@ -8,15 +8,13 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
   web:
-    build: .
-    environment:
-      - MIX_ENV=prod
-      - POSTGRES_HOST=db
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_USER=postgres
-      - PORT=4000
+    image: mru2/phoenix-test
     ports:
       - "4000:4000"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=db
     links:
-      - "db:db"
+      - db
 
