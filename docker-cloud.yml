@@ -1,18 +1,18 @@
 db:
-  image: postgres:latest
-  ports:
-    - "5432:5432"
   environment:
-    - POSTGRES_USER
-    - POSTGRES_PASSWORD
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_USER=postgres
+  image: 'postgres:latest'
+  ports:
+    - '5432:5432'
 web:
-  image: mru2/phoenix-test
   environment:
-    - POSTGRES_USER
-    - POSTGRES_PASSWORD
-    - POSTGRES_HOST=db
     - PORT=4000
-  ports:
-    - "4000:4000"
+    - POSTGRES_HOST=db
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_USER=postgres
+  image: 'mru2/phoenix-test:latest'
   links:
-    - "db:db"
+    - db
+  ports:
+    - '4000:80'
