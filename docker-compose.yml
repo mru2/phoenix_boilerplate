@@ -7,3 +7,16 @@ services:
     environment:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
+  web:
+    build: .
+    environment:
+      - MIX_ENV=prod
+      - POSTGRES_HOST=db
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - PORT=4000
+    ports:
+      - "4000:4000"
+    links:
+      - "db:db"
+
