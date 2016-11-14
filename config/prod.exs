@@ -22,15 +22,12 @@ config :logger, level: :info
 
 # Secret key
 config :api, Api.Endpoint,
-  secret_key_base: System.get_env("SECRET_KEY_BASE")
+  secret_key_base: {:system, "SECRET_KEY_BASE"}
 
 # Configure your database
 config :api, Api.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("POSTGRES_USER"),
-  password: System.get_env("POSTGRES_PASSWORD"),
-  hostname: System.get_env("POSTGRES_HOST"),
-  database: "api_prod",
+  url: {:system, "POSTGRES_URL"},
   pool_size: 20
 
   # ## SSL Support
