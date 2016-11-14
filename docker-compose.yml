@@ -3,16 +3,8 @@ services:
   db:
     image: postgres:latest
     environment:
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=api_dev
       - POSTGRES_USER=postgres
-      - POSTGRES_DB=api_prod
-  web:
-    image: mru2/phoenix-test:latest
+      - POSTGRES_PASSWORD=postgres
     ports:
-      - "4000:4000"
-    environment:
-      - PORT=4000
-      - POSTGRES_URL=ecto://postgres:postgres@db/api_prod
-    links:
-      - db
-
+      - "5432:5432"

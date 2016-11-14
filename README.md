@@ -1,35 +1,63 @@
 [![Build Status](https://travis-ci.org/mru2/phoenix_in_production.svg?branch=master)](https://travis-ci.org/mru2/phoenix_in_production)
 
-# Api
+# Phoenix Boilerplate
 
-Experiment with deploying and monitoring a phoenix API
+Default setup for developing, testing, and deploying a phoenix app
 
-# Services
+# Test
 
-- github
-- travis
-- docker cloud
+```
+mix test
+```
 
-# Configuration
+# Dev
 
-## Travis
+## Dependencies
 
-Configure environment variables
+* elixir
+* docker
+
+## Setup
+
+```
+mix deps.get
+```
+
+## Use
+
+Run a local server with :
+
+```
+docker-compose up
+env $(cat .env | xargs) mix phoenix.server
+```
+
+Run a console with :
+
+```
+docker-compose up
+env $(cat .env | xargs) iex -S mix phoenix.server
+```
+
+
+# Deploy
+
+## Dependencies
+
+* travis
+* docker-cloud
+
+## Setup
+
+### Travis
+
+Add your docker-cloud credentials in environment variables
 
 ```
 DOCKER_USERNAME myusername
 DOCKER_PASSWORD secretsecret
 ```
 
-Setup github integration
+### Docker Cloud
 
-## Docker cloud
-
-Configure environment variables
-
-```
-POSTGRES_USER
-POSTGRES_PASSWORD
-POSTGRES_HOST
-SECRET_KEY_BASE
-```
+Configure a stack using the `docker-cloud.yml` stackfile

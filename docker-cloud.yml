@@ -1,16 +1,16 @@
 db:
   environment:
+    - POSTGRES_DB=api_prod
     - POSTGRES_PASSWORD=postgres
     - POSTGRES_USER=postgres
   image: 'postgres:latest'
-  ports:
-    - '5432:5432'
 web:
+  autoredeploy: true
   environment:
     - PORT=4000
-    - POSTGRES_HOST=db
-    - POSTGRES_PASSWORD=postgres
-    - POSTGRES_USER=postgres
+    - POSTGRES_URL=ecto://postgres:postgres@db/api_prod
+    - HOST=example.com
+    - SECRET_KEY_BASE=mysecretkey
   image: 'mru2/phoenix-test:latest'
   links:
     - db
