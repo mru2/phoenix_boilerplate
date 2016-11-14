@@ -7,5 +7,5 @@ WORKDIR /app
 
 COPY rel .
 
-ENTRYPOINT ["./releases/0.0.1/api.sh"]
+ENTRYPOINT ["./releases/bin/api"]
 CMD ["foreground"]

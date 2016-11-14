@@ -13,6 +13,8 @@ RUN mix local.hex --force && \
       mix local.rebar --force && \
       mix hex.info
 
+RUN mix deps.get --force
+
 # Build the release
 RUN mix compile
 RUN mix release
