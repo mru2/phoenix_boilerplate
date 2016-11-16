@@ -6,9 +6,6 @@ db:
   image: 'postgres:latest'
 web:
   autoredeploy: true
-  environment:
-    - HOST=example.com
-    - SECRET_KEY_BASE=mysecretkey
   image: 'mru2/phoenix-test:latest'
   links:
     - db
