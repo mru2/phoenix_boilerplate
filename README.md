@@ -58,6 +58,13 @@ DOCKER_USERNAME myusername
 DOCKER_PASSWORD secretsecret
 ```
 
+Also add your production environment configuration
+
+```
+HOST myhost.com
+SECRET_KEY_BASE mysecretkey
+```
+
 ### Docker Cloud
 
 Configure a stack using the `docker-cloud.yml` stackfile
